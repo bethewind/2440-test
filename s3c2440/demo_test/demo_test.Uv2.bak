@@ -1,0 +1,155 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (demo_test), 0x0004 // Tools: 'ARM-ADS'
+
+Group (startup)
+Group (Common Files)
+Group (Source  Files)
+Group (readme)
+
+File 1,2,<.\S3C2440A.s><S3C2440A.s> 0x48509482 
+File 2,1,<.\2440lib.c><2440lib.c> 0x48507F08 
+File 2,2,<.\2440slib.s><2440slib.s> 0x48474858 
+File 2,2,<.\swis.s><swis.s> 0x48473D1E 
+File 2,2,<.\k9s1208_s.s><k9s1208_s.s> 0x48473D2E 
+File 3,1,<.\ac97.c><ac97.c> 0x48A144E2 
+File 3,1,<.\Adcts.c><Adcts.c> 0x48475726 
+File 3,1,<.\am29f800.c><am29f800.c> 0x40481C32 
+File 3,1,<.\camif.c><camif.c> 0x484DEED0 
+File 3,1,<.\camproset.c><camproset.c> 0x48A14DDC 
+File 3,1,<.\cpuspeed.c><cpuspeed.c> 0x48A15002 
+File 3,1,<.\Dma.c><Dma.c> 0x4848925E 
+File 3,1,<.\dvstest.c><dvstest.c> 0x48475908 
+File 3,1,<.\Eint.c><Eint.c> 0x48464C20 
+File 3,1,<.\flash.c><flash.c> 0x484DF94A 
+File 3,1,<.\glib.c><glib.c> 0x40481C32 
+File 3,1,<.\idle.c><idle.c> 0x48464C3E 
+File 3,1,<.\IIC.c><IIC.c> 0x484DE2E6 
+File 3,1,<.\iis.c><iis.c> 0x4849026A 
+File 3,1,<.\iis_dual.c><iis_dual.c> 0x48A150F8 
+File 3,1,<.\int.c><int.c> 0x4848D6FA 
+File 3,1,<.\iotest.c><iotest.c> 0x40481C32 
+File 3,1,<.\IrDA.c><IrDA.c> 0x484DE820 
+File 3,1,<.\k9k2g16.c><k9k2g16.c> 0x48475FB6 
+File 3,1,<.\lcd.c><lcd.c> 0x484DF25C 
+File 3,1,<.\lcdlib.c><lcdlib.c> 0x484757B8 
+File 3,1,<.\memtest.c><memtest.c> 0x40481C32 
+File 3,1,<.\mmu.c><mmu.c> 0x4847A256 
+File 3,1,<.\Nand.c><Nand.c> 0x484E3356 
+File 3,1,<.\nwait.c><nwait.c> 0x4847583C 
+File 3,1,<.\PD6710.c><PD6710.c> 0x48475382 
+File 3,1,<.\pll.c><pll.c> 0x484756B0 
+File 3,1,<.\Power.c><Power.c> 0x484DFA40 
+File 3,1,<.\pwr_c.c><pwr_c.c> 0x48475DF8 
+File 3,1,<.\retarget.c><retarget.c> 0x40481C32 
+File 3,1,<.\RTC.c><RTC.c> 0x4848DF0C 
+File 3,1,<.\sdi.c><sdi.c> 0x48A15140 
+File 3,1,<.\sleep.c><sleep.c> 0x48A15140 
+File 3,1,<.\Spi.c><Spi.c> 0x484DEDA0 
+File 3,1,<.\stone.c><stone.c> 0x48465336 
+File 3,1,<.\strata32.c><strata32.c> 0x484750AA 
+File 3,1,<.\swi.c><swi.c> 0x484657FC 
+File 3,1,<.\Timer.c><Timer.c> 0x48A150F8 
+File 3,1,<.\Uart0.c><Uart0.c> 0x48475382 
+File 3,1,<.\Uart1.c><Uart1.c> 0x48475382 
+File 3,1,<.\Uart2.c><Uart2.c> 0x4847516A 
+File 3,1,<.\Uart_test.c><Uart_test.c> 0x4849026A 
+File 3,1,<.\user_test1.c><user_test1.c> 0x4850832E 
+File 3,1,<.\user_test2.c><user_test2.c> 0x484653FE 
+File 3,1,<.\user_test.c><user_test.c> 0x484E2EDA 
+File 3,1,<.\userlib.c><userlib.c> 0x48A15354 
+File 3,1,<.\xmain.c><xmain.c> 0x48A14644 
+File 3,5,<.\2440test.cpp><2440test.cpp> 0x484F7B78 
+File 4,5,<.\README.txt><README.txt> 0x48A28FD6 
+
+
+Options 1,0,0  // Target 'demo_test'
+ Device (S3C2440A)
+ Vendor (Samsung)
+ Cpu (IRAM(0x40000000-0x40000FFF) CLOCK(12000000) CPUTYPE(ARM920T))
+ FlashUt ()
+ StupF ("STARTUP\Samsung\S3C2440A.s" ("Samsung S3C2440A Startup Code"))
+ FlashDR ()
+ DevID (4277)
+ Rgf (S3C2440A.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ DBC_IFX ()
+ DBC_CMS ()
+ DBC_AMS ()
+ DBC_LMS ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg (ÿSamsung\)
+ OrgReg (ÿSamsung\)
+ TgStat=16
+ OutDir (.\obj\)
+ OutName (demo_test)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=1
+ LstDir (.\)
+ HexSel=1
+ MG32K=0
+ TGMORE=0
+ RunUsr 0 1 <d:\Keil\ARM\BIN31\fromelf.exe --bin -o ./obj/demo_test.bin ./obj/demo_test.axf>
+ RunUsr 1 0 <>
+ BrunUsr 0 0 <>
+ BrunUsr 1 0 <>
+ CrunUsr 0 0 <>
+ CrunUsr 1 0 <>
+ SVCSID <>
+ GLFLAGS=1790
+ ADSFLGA { 243,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ACPUTYP (ARM920T)
+ ADSTFLGA { 0,8,64,0,96,0,64,8,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMADSOCM { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMADSIRAM { 0,0,0,0,64,0,16,0,0 }
+ OCMADSIROM { 0,0,0,0,0,0,0,0,0 }
+ OCMADSXRAM { 0,0,0,0,0,0,0,0,0 }
+ OCR_RVCT { 1,0,0,0,0,0,8,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,8,0,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0,16,0,0,0,0,0,0,0,0,0,0,0 }
+ RV_STAVEC ()
+ ADSCCFLG { 5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSCMISC ()
+ ADSCDEFN ()
+ ADSCUDEF ()
+ ADSCINCD (.\include;..\2440atest_rev04_0327)
+ ADSASFLG { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSAMISC ()
+ ADSADEFN ()
+ ADSAUDEF ()
+ ADSAINCD ()
+ PropFld { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ ADSLDFG { 16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSLDTA (0x00000000)
+ ADSLDDA (0x40000000)
+ ADSLDSC (..\common\RuninRAM.sct)
+ ADSLDIB ()
+ ADSLDIC ()
+ ADSLDMC ()
+ ADSLDIF ()
+ ADSLDDW ()
+  OPTDL (SARM.DLL)()(DARMSS9.DLL)(-pS3C2440A)(SARM.DLL)()(TARMSS9.DLL)(-pS3C2440A)
+  OPTDBG 47614,0,()()()()()()()()()(.\Ext_RAM.ini) (BIN\UL2ARM.DLL)()()()
+ FLASH1 { 1,0,0,0,1,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0 }
+ FLASH2 (BIN\UL2ARM.DLL)
+ FLASH3 ("" ())
+ FLASH4 ()
+EndOpt
+

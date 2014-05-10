@@ -1,0 +1,94 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.s*; *.src; *.a*)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt; *.h; *.inc)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (demo_test), 0x0004 // Tools: 'ARM-ADS'
+GRPOPT 1,(startup),1,0,0
+GRPOPT 2,(Common Files),0,0,0
+GRPOPT 3,(Source  Files),0,0,0
+GRPOPT 4,(readme),1,0,0
+
+OPTFFF 1,1,2,0,0,0,0,0,<.\S3C2440A.s><S3C2440A.s> 
+OPTFFF 2,2,1,0,0,0,0,0,<.\2440lib.c><2440lib.c> 
+OPTFFF 2,3,2,0,0,0,0,0,<.\2440slib.s><2440slib.s> 
+OPTFFF 2,4,2,0,0,0,0,0,<.\swis.s><swis.s> 
+OPTFFF 2,5,2,0,0,0,0,0,<.\k9s1208_s.s><k9s1208_s.s> 
+OPTFFF 3,6,1,0,0,0,0,0,<.\ac97.c><ac97.c> 
+OPTFFF 3,7,1,0,0,0,0,0,<.\Adcts.c><Adcts.c> 
+OPTFFF 3,8,1,0,0,0,0,0,<.\am29f800.c><am29f800.c> 
+OPTFFF 3,9,1,0,0,0,0,0,<.\camif.c><camif.c> 
+OPTFFF 3,10,1,0,0,0,0,0,<.\camproset.c><camproset.c> 
+OPTFFF 3,11,1,0,0,0,0,0,<.\cpuspeed.c><cpuspeed.c> 
+OPTFFF 3,12,1,0,0,0,0,0,<.\Dma.c><Dma.c> 
+OPTFFF 3,13,1,0,0,0,0,0,<.\dvstest.c><dvstest.c> 
+OPTFFF 3,14,1,0,0,0,0,0,<.\Eint.c><Eint.c> 
+OPTFFF 3,15,1,0,0,0,0,0,<.\flash.c><flash.c> 
+OPTFFF 3,16,1,0,0,0,0,0,<.\glib.c><glib.c> 
+OPTFFF 3,17,1,0,0,0,0,0,<.\idle.c><idle.c> 
+OPTFFF 3,18,1,0,0,0,0,0,<.\IIC.c><IIC.c> 
+OPTFFF 3,19,1,0,0,0,0,0,<.\iis.c><iis.c> 
+OPTFFF 3,20,1,0,0,0,0,0,<.\iis_dual.c><iis_dual.c> 
+OPTFFF 3,21,1,0,0,0,0,0,<.\int.c><int.c> 
+OPTFFF 3,22,1,0,0,0,0,0,<.\iotest.c><iotest.c> 
+OPTFFF 3,23,1,0,0,0,0,0,<.\IrDA.c><IrDA.c> 
+OPTFFF 3,24,1,0,0,0,0,0,<.\k9k2g16.c><k9k2g16.c> 
+OPTFFF 3,25,1,0,0,0,0,0,<.\lcd.c><lcd.c> 
+OPTFFF 3,26,1,0,0,0,0,0,<.\lcdlib.c><lcdlib.c> 
+OPTFFF 3,27,1,0,0,0,0,0,<.\memtest.c><memtest.c> 
+OPTFFF 3,28,1,0,0,0,0,0,<.\mmu.c><mmu.c> 
+OPTFFF 3,29,1,0,0,0,0,0,<.\Nand.c><Nand.c> 
+OPTFFF 3,30,1,0,0,0,0,0,<.\nwait.c><nwait.c> 
+OPTFFF 3,31,1,0,0,0,0,0,<.\PD6710.c><PD6710.c> 
+OPTFFF 3,32,1,0,0,0,0,0,<.\pll.c><pll.c> 
+OPTFFF 3,33,1,0,0,0,0,0,<.\Power.c><Power.c> 
+OPTFFF 3,34,1,0,0,0,0,0,<.\pwr_c.c><pwr_c.c> 
+OPTFFF 3,35,1,0,0,0,0,0,<.\retarget.c><retarget.c> 
+OPTFFF 3,36,1,0,0,0,0,0,<.\RTC.c><RTC.c> 
+OPTFFF 3,37,1,0,0,0,0,0,<.\sdi.c><sdi.c> 
+OPTFFF 3,38,1,0,0,0,0,0,<.\sleep.c><sleep.c> 
+OPTFFF 3,39,1,0,0,0,0,0,<.\Spi.c><Spi.c> 
+OPTFFF 3,40,1,0,0,0,0,0,<.\stone.c><stone.c> 
+OPTFFF 3,41,1,0,0,0,0,0,<.\strata32.c><strata32.c> 
+OPTFFF 3,42,1,0,0,0,0,0,<.\swi.c><swi.c> 
+OPTFFF 3,43,1,0,0,0,0,0,<.\Timer.c><Timer.c> 
+OPTFFF 3,44,1,0,0,0,0,0,<.\Uart0.c><Uart0.c> 
+OPTFFF 3,45,1,0,0,0,0,0,<.\Uart1.c><Uart1.c> 
+OPTFFF 3,46,1,0,0,0,0,0,<.\Uart2.c><Uart2.c> 
+OPTFFF 3,47,1,0,0,0,0,0,<.\Uart_test.c><Uart_test.c> 
+OPTFFF 3,48,1,0,0,0,0,0,<.\user_test1.c><user_test1.c> 
+OPTFFF 3,49,1,0,0,0,0,0,<.\user_test2.c><user_test2.c> 
+OPTFFF 3,50,1,0,0,0,0,0,<.\user_test.c><user_test.c> 
+OPTFFF 3,51,1,0,0,0,0,0,<.\userlib.c><userlib.c> 
+OPTFFF 3,52,1,570425344,0,0,0,0,<.\xmain.c><xmain.c> 
+OPTFFF 3,53,5,0,0,0,0,0,<.\2440test.cpp><2440test.cpp> 
+OPTFFF 4,54,5,1392508930,0,19,19,0,<.\README.txt><README.txt> { 44,0,0,0,2,0,0,0,3,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,226,255,255,255,88,0,0,0,116,0,0,0,74,3,0,0,146,1,0,0 }
+
+
+TARGOPT 1, (demo_test)
+ ADSCLK=12000000
+  OPTTT 1,1,1,0
+  OPTHX 1,65535,0,0,0
+  OPTLX 79,66,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTAX 0
+  OPTDL (SARM.DLL)()(DARMSS9.DLL)(-pS3C2440A)(SARM.DLL)()(TARMSS9.DLL)(-pS3C2440A)
+  OPTDBG 47614,0,()()()()()()()()()(.\Ext_RAM.ini) (BIN\UL2ARM.DLL)()()()
+  OPTKEY 0,(DLGTARM)((113=-1,-1,-1,-1,0)(100=-1,-1,-1,-1,0)(102=-1,-1,-1,-1,0)(103=-1,-1,-1,-1,0)(104=-1,-1,-1,-1,0)(105=-1,-1,-1,-1,0)(106=-1,-1,-1,-1,0)(107=-1,-1,-1,-1,0)(108=-1,-1,-1,-1,0)(109=-1,-1,-1,-1,0)(110=-1,-1,-1,-1,0)(111=-1,-1,-1,-1,0)(112=-1,-1,-1,-1,0))
+  OPTKEY 0,(ARMDBGFLAGS)()
+  OPTKEY 0,(UL2ARM)(-UV0028B9E -O14 -S0 -C0 -N00("ARM920T Core") -D00(0032409D) -L00(4) -FO7 -FD40000000 -FC800 -FN0)
+  OPTDF 0x84
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

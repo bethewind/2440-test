@@ -1,0 +1,122 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;=======================================================
+                       =============
+    2 00000000         ; File Name  : swis.s
+    3 00000000         ; Function : S3C2440 SWI Test
+    4 00000000         ; Date  : March 20, 2002
+    5 00000000         ; Version : 0.0
+    6 00000000         ; History
+    7 00000000         ;   0.0 : Programming start (March 12, 2002) -> SOP
+    8 00000000         ;   0.01: Modified for 2440, DonGo
+    9 00000000         ;=======================================================
+                       =============
+   10 00000000         
+   11 00000000         ;Check if tasm.exe(armasm -16 ...@ADS 1.0) is used.
+   12 00000000                 GBLL             THUMBCODE
+   13 00000000         
+   14 00000000                 [                {CONFIG} = 16
+   18 00000000 FALSE    
+                       THUMBCODE
+                               SETL             {FALSE}
+   19 00000000                 ]
+   20 00000000         
+   21 00000000                 MACRO
+   22 00000000                 MOV_PC_LR
+   23 00000000         ; [ THUMBCODE
+   24 00000000                 bx               lr
+   25 00000000         ;|
+   26 00000000         ;    mov     pc,lr
+   27 00000000         ;]
+   28 00000000                 MEND
+   29 00000000         
+   30 00000000                 AREA             |C$$code|, CODE, READONLY
+   31 00000000         
+   32 00000000                 EXPORT           SWI_ISR
+   33 00000000         SWI_ISR
+   34 00000000 E1B0F00E        movs             pc,lr
+   35 00000004         
+   36 00000004                 END
+Command Line: --debug --xref --device=DARMSS9 --apcs=interwork -o.\obj\swis.o -
+Id:\Keil\ARM\INC\Samsung --list=swis.lst swis.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+C$$code 00000000
+
+Symbol: C$$code
+   Definitions
+      At line 30 in file swis.s
+   Uses
+      None
+Comment: C$$code unused
+SWI_ISR 00000000
+
+Symbol: SWI_ISR
+   Definitions
+      At line 33 in file swis.s
+   Uses
+      At line 32 in file swis.s
+Comment: SWI_ISR used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.debug_info$$$C$$code 00000000
+
+Symbol: .debug_info$$$C$$code
+   Definitions
+      None
+   Uses
+      None
+Warning: .debug_info$$$C$$code undefinedComment: .debug_info$$$C$$code unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.debug_line$$$C$$code 00000000
+
+Symbol: .debug_line$$$C$$code
+   Definitions
+      None
+   Uses
+      None
+Warning: .debug_line$$$C$$code undefinedComment: .debug_line$$$C$$code unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.debug_abbrev 00000000
+
+Symbol: .debug_abbrev
+   Definitions
+      None
+   Uses
+      None
+Warning: .debug_abbrev undefinedComment: .debug_abbrev unused
+__ARM_asm.debug_abbrev 00000000
+
+Symbol: __ARM_asm.debug_abbrev
+   Definitions
+      None
+   Uses
+      None
+Warning: __ARM_asm.debug_abbrev undefinedComment: __ARM_asm.debug_abbrev unused
+2 symbols
+326 symbols in table

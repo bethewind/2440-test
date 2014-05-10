@@ -1,0 +1,25 @@
+Chang Log:
+
+2010.10.24
+Change README to english. Chinese words can not be displayed properly in GitHub currently.
+
+
+2010.10.23
+Use Git to manage source code.
+
+==========================================
+
+This demo code is supplied by FriendlyARM company,which is used for s3c2440 from samsung.
+You could use ADS or gcc complier to build image.
+
+Simple tips:
+
+1. Use H-Jtag or other debugger to monitor the running process of program, the download address for image is 0x30000000
+
+Supported LCD type:
+- NEC 3.5'' True-color LCD, 240*320.
+- 7'' True-color LCD,800*480
+- VGA extend module,1024*768@79MHz.
+ 
+
+

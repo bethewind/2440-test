@@ -1,0 +1,16 @@
+objs := head.o init.o interrupt.o main.o
+
+timer.bin: $(objs)
+	arm-elf-ld -Ttimer.lds -o timer_elf $^
+	arm-elf-objcopy -O binary -S timer_elf $@
+	arm-elf-objdump -D -m arm timer_elf > timer.dis
+	
+%.o:%.c
+	arm-elf-gcc -Wall -O2 -c -o $@ $<
+
+%.o:%.S
+	arm-elf-gcc -Wall -O2 -c -o $@ $<
+
+clean:
+	rm -f timer.bin timer_elf timer.dis *.o		
+	

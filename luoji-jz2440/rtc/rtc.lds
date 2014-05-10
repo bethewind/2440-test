@@ -1,0 +1,11 @@
+SECTIONS {
+    . = 0x00000000;
+    .init : AT(0){ head.o init2440.o nand.o}
+    . = 0x30000000;
+    .text : AT(4096) { *(.text) }
+    .rodata ALIGN(4) : AT((LOADADDR(.text)+SIZEOF(.text))) {*(.rodata*)} 
+    .data ALIGN(4)   : AT((LOADADDR(.rodata)+SIZEOF(.rodata))) { *(.data) }
+    __bss_start = .;
+    .bss ALIGN(4)  : { *(.bss)  *(COMMON) }
+    __bss_end = .;
+}

@@ -1,0 +1,52 @@
+;/**************************************************************************************
+;* 
+;*	Project Name : S3C6400 Validation
+;*
+;*	Copyright 2006 by Samsung Electronics, Inc.
+;*	All rights reserved.
+;*
+;*	Project Description :
+;*		This software is only for validating functions of the S3C6400.
+;*		Anybody can use this software without our permission.
+;*  
+;*--------------------------------------------------------------------------------------
+;* 
+;*	File Name : 6410_scatter.txt
+;*  
+;*	File Description : Scatterload structure for downloading image with Debugger/
+;*
+;*	Author : Heemyung.Noh
+;*	Dept. : AP Development Team
+;*	Created Date : 2007/09/04
+;* 
+;*	History
+;*	- Created(Heemyung.Noh 2007/09/04)
+;*  
+;**************************************************************************************/
+
+DRAM 0x50200000
+{
+  CODE 0x50200000
+  {
+    startup.o (Init,+FIRST)
+    scatter_load.o (+RO)
+ 
+    * (+RO)
+    * (+RW, +ZI)
+  }
+  IRAM 0x0c000400 0xc00			;0x0c000000~0x0c0003ff : Exception vector area(Nand Booting)
+  {
+    ;dmc.o (+RO)
+    ;dmc.o (+RW, +ZI)			  ; all remaining data
+  }
+  ITCM 0x80000000 0x4000
+  {
+  ;	dmc.o (+RO)
+  	dmc_library.o (+RO)
+  }
+  DTCM 0x80004000 0x4000
+  {
+  ;	dmc.o (+RW, +ZI)
+  	dmc_library.o (+RW, +ZI)
+  }  
+}

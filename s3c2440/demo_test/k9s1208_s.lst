@@ -1,0 +1,263 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;*******************************************************
+                       ******
+    2 00000000         ; NAME : NAND FLASH Subroutine for a410 bootstrap
+    3 00000000         ; DATE : 18.FEB.2002
+    4 00000000         ; DESC :
+    5 00000000         ;  02.18.2002:purnnamu: modified for A410
+    6 00000000         ;  04.24.2002:purnnamu: optimized for NAND flash bootstr
+                       ap 
+    7 00000000         ;*******************************************************
+                       ******
+    8 00000000         
+    9 00000000                 MACRO
+   10 00000000                 LDR4STR1         $src,$tmp1,$tmp2
+   11 00000000                 ldrb             $tmp1,[$src]
+   12 00000000                 ldrb             $tmp2,[$src]
+   13 00000000                 orr              $tmp1,$tmp1,$tmp2,LSL #8
+   14 00000000                 ldrb             $tmp2,[$src]
+   15 00000000                 orr              $tmp1,$tmp1,$tmp2,LSL #16
+   16 00000000                 ldrb             $tmp2,[$src]
+   17 00000000                 orr              $tmp1,$tmp1,$tmp2,LSL #24
+   18 00000000                 MEND
+   19 00000000         
+   20 00000000                 AREA             |C$$code|, CODE, READONLY
+   21 00000000         
+   22 00000000                 EXPORT           __RdPage512
+   23 00000000         __RdPage512
+   24 00000000         ;input:a1(r0)=pPage
+   25 00000000 E92D0FFE        stmfd            sp!,{r1-r11}
+   26 00000004         
+   27 00000004 E59F1178        ldr              r1,=0x4e00000c ;NFDATA
+   28 00000008 E3A02C02        mov              r2,#0x200
+   29 0000000C         0
+   30 0000000C                 LDR4STR1         r1,r4,r3
+   11 0000000C E5D14000        ldrb             r4,[r1]
+   12 00000010 E5D13000        ldrb             r3,[r1]
+   13 00000014 E1844403        orr              r4,r4,r3,LSL #8
+   14 00000018 E5D13000        ldrb             r3,[r1]
+   15 0000001C E1844803        orr              r4,r4,r3,LSL #16
+   16 00000020 E5D13000        ldrb             r3,[r1]
+   17 00000024 E1844C03        orr              r4,r4,r3,LSL #24
+   31 00000028                 LDR4STR1         r1,r5,r3
+   11 00000028 E5D15000        ldrb             r5,[r1]
+   12 0000002C E5D13000        ldrb             r3,[r1]
+   13 00000030 E1855403        orr              r5,r5,r3,LSL #8
+   14 00000034 E5D13000        ldrb             r3,[r1]
+   15 00000038 E1855803        orr              r5,r5,r3,LSL #16
+   16 0000003C E5D13000        ldrb             r3,[r1]
+   17 00000040 E1855C03        orr              r5,r5,r3,LSL #24
+   32 00000044                 LDR4STR1         r1,r6,r3
+   11 00000044 E5D16000        ldrb             r6,[r1]
+   12 00000048 E5D13000        ldrb             r3,[r1]
+   13 0000004C E1866403        orr              r6,r6,r3,LSL #8
+   14 00000050 E5D13000        ldrb             r3,[r1]
+   15 00000054 E1866803        orr              r6,r6,r3,LSL #16
+   16 00000058 E5D13000        ldrb             r3,[r1]
+   17 0000005C E1866C03        orr              r6,r6,r3,LSL #24
+   33 00000060                 LDR4STR1         r1,r7,r3
+   11 00000060 E5D17000        ldrb             r7,[r1]
+   12 00000064 E5D13000        ldrb             r3,[r1]
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   13 00000068 E1877403        orr              r7,r7,r3,LSL #8
+   14 0000006C E5D13000        ldrb             r3,[r1]
+   15 00000070 E1877803        orr              r7,r7,r3,LSL #16
+   16 00000074 E5D13000        ldrb             r3,[r1]
+   17 00000078 E1877C03        orr              r7,r7,r3,LSL #24
+   34 0000007C                 LDR4STR1         r1,r8,r3
+   11 0000007C E5D18000        ldrb             r8,[r1]
+   12 00000080 E5D13000        ldrb             r3,[r1]
+   13 00000084 E1888403        orr              r8,r8,r3,LSL #8
+   14 00000088 E5D13000        ldrb             r3,[r1]
+   15 0000008C E1888803        orr              r8,r8,r3,LSL #16
+   16 00000090 E5D13000        ldrb             r3,[r1]
+   17 00000094 E1888C03        orr              r8,r8,r3,LSL #24
+   35 00000098                 LDR4STR1         r1,r9,r3
+   11 00000098 E5D19000        ldrb             r9,[r1]
+   12 0000009C E5D13000        ldrb             r3,[r1]
+   13 000000A0 E1899403        orr              r9,r9,r3,LSL #8
+   14 000000A4 E5D13000        ldrb             r3,[r1]
+   15 000000A8 E1899803        orr              r9,r9,r3,LSL #16
+   16 000000AC E5D13000        ldrb             r3,[r1]
+   17 000000B0 E1899C03        orr              r9,r9,r3,LSL #24
+   36 000000B4                 LDR4STR1         r1,r10,r3
+   11 000000B4 E5D1A000        ldrb             r10,[r1]
+   12 000000B8 E5D13000        ldrb             r3,[r1]
+   13 000000BC E18AA403        orr              r10,r10,r3,LSL #8
+   14 000000C0 E5D13000        ldrb             r3,[r1]
+   15 000000C4 E18AA803        orr              r10,r10,r3,LSL #16
+   16 000000C8 E5D13000        ldrb             r3,[r1]
+   17 000000CC E18AAC03        orr              r10,r10,r3,LSL #24
+   37 000000D0                 LDR4STR1         r1,r11,r3
+   11 000000D0 E5D1B000        ldrb             r11,[r1]
+   12 000000D4 E5D13000        ldrb             r3,[r1]
+   13 000000D8 E18BB403        orr              r11,r11,r3,LSL #8
+   14 000000DC E5D13000        ldrb             r3,[r1]
+   15 000000E0 E18BB803        orr              r11,r11,r3,LSL #16
+   16 000000E4 E5D13000        ldrb             r3,[r1]
+   17 000000E8 E18BBC03        orr              r11,r11,r3,LSL #24
+   38 000000EC E8A00FF0        stmia            r0!,{r4-r11}
+   39 000000F0 E2522020        subs             r2,r2,#32
+   40 000000F4 1AFFFFC4        bne              %B0
+   41 000000F8         
+   42 000000F8 E8BD0FFE        ldmfd            sp!,{r1-r11}
+   43 000000FC E12FFF1E        bx               lr
+   44 00000100         
+   45 00000100         
+   46 00000100                 EXPORT           __RdSpare16
+   47 00000100         __RdSpare16
+   48 00000100         ;input:a1(r0)=pPage
+   49 00000100 E92D00FE        stmfd            sp!,{r1-r7}
+   50 00000104         
+   51 00000104 E59F1078        ldr              r1,=0x4e00000c ;NFDATA
+   52 00000108         
+   53 00000108                 LDR4STR1         r1,r4,r3
+   11 00000108 E5D14000        ldrb             r4,[r1]
+   12 0000010C E5D13000        ldrb             r3,[r1]
+   13 00000110 E1844403        orr              r4,r4,r3,LSL #8
+   14 00000114 E5D13000        ldrb             r3,[r1]
+   15 00000118 E1844803        orr              r4,r4,r3,LSL #16
+   16 0000011C E5D13000        ldrb             r3,[r1]
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   17 00000120 E1844C03        orr              r4,r4,r3,LSL #24
+   54 00000124                 LDR4STR1         r1,r5,r3
+   11 00000124 E5D15000        ldrb             r5,[r1]
+   12 00000128 E5D13000        ldrb             r3,[r1]
+   13 0000012C E1855403        orr              r5,r5,r3,LSL #8
+   14 00000130 E5D13000        ldrb             r3,[r1]
+   15 00000134 E1855803        orr              r5,r5,r3,LSL #16
+   16 00000138 E5D13000        ldrb             r3,[r1]
+   17 0000013C E1855C03        orr              r5,r5,r3,LSL #24
+   55 00000140                 LDR4STR1         r1,r6,r3
+   11 00000140 E5D16000        ldrb             r6,[r1]
+   12 00000144 E5D13000        ldrb             r3,[r1]
+   13 00000148 E1866403        orr              r6,r6,r3,LSL #8
+   14 0000014C E5D13000        ldrb             r3,[r1]
+   15 00000150 E1866803        orr              r6,r6,r3,LSL #16
+   16 00000154 E5D13000        ldrb             r3,[r1]
+   17 00000158 E1866C03        orr              r6,r6,r3,LSL #24
+   56 0000015C                 LDR4STR1         r1,r7,r3
+   11 0000015C E5D17000        ldrb             r7,[r1]
+   12 00000160 E5D13000        ldrb             r3,[r1]
+   13 00000164 E1877403        orr              r7,r7,r3,LSL #8
+   14 00000168 E5D13000        ldrb             r3,[r1]
+   15 0000016C E1877803        orr              r7,r7,r3,LSL #16
+   16 00000170 E5D13000        ldrb             r3,[r1]
+   17 00000174 E1877C03        orr              r7,r7,r3,LSL #24
+   57 00000178 E8A000F0        stmia            r0!,{r4-r7}
+   58 0000017C         
+   59 0000017C E8BD00FE        ldmfd            sp!,{r1-r7}
+   60 00000180 E12FFF1E        bx               lr
+   61 00000184         
+   62 00000184                 END
+              4E00000C 
+Command Line: --debug --xref --device=DARMSS9 --apcs=interwork -o.\obj\k9s1208_
+s.o -Id:\Keil\ARM\INC\Samsung --list=k9s1208_s.lst k9s1208_s.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ 0000000C
+
+Symbol: 
+   Definitions
+      None
+   Uses
+      None
+Warning:  undefinedComment:  unused
+C$$code 00000000
+
+Symbol: C$$code
+   Definitions
+      At line 20 in file k9s1208_s.s
+   Uses
+      None
+Comment: C$$code unused
+__RdPage512 00000000
+
+Symbol: __RdPage512
+   Definitions
+      At line 23 in file k9s1208_s.s
+   Uses
+      At line 22 in file k9s1208_s.s
+Comment: __RdPage512 used once
+__RdSpare16 00000100
+
+Symbol: __RdSpare16
+   Definitions
+      At line 47 in file k9s1208_s.s
+   Uses
+      At line 46 in file k9s1208_s.s
+Comment: __RdSpare16 used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.debug_info$$$C$$code 00000000
+
+Symbol: .debug_info$$$C$$code
+   Definitions
+      None
+   Uses
+      None
+Warning: .debug_info$$$C$$code undefinedComment: .debug_info$$$C$$code unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.debug_line$$$C$$code 00000000
+
+Symbol: .debug_line$$$C$$code
+   Definitions
+      None
+   Uses
+      None
+Warning: .debug_line$$$C$$code undefinedComment: .debug_line$$$C$$code unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.debug_abbrev 00000000
+
+Symbol: .debug_abbrev
+   Definitions
+      None
+   Uses
+      None
+Warning: .debug_abbrev undefinedComment: .debug_abbrev unused
+__ARM_asm.debug_abbrev 00000000
+
+Symbol: __ARM_asm.debug_abbrev
+   Definitions
+      None
+   Uses
+      None
+Warning: __ARM_asm.debug_abbrev undefinedComment: __ARM_asm.debug_abbrev unused
+2 symbols
+329 symbols in table
